@@ -1,0 +1,30 @@
+.not-found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.not-found::before {
+    content: '404';
+    font-size: 96px;
+    font-weight: bold;
+    margin-right: 20px;
+    color: #d9534f;
+}
+
+@media (max-width: 768px) {
+    .not-found::before {
+        font-size: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    .not-found::before {
+        font-size: 48px;
+    }
+}
