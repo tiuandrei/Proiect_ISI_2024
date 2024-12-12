@@ -16,6 +16,7 @@ import AddEvent from './pages/Calendar/AddEvent.jsx';
 import Announcements from './pages/Announcement/ViewAnnouncements.jsx';
 import AddOrModifyEvent from './pages/Calendar/AddEvent.jsx';
 import CreateAnnouncement from './pages/Announcement/CreateAnnouncement.jsx';
+import About from './pages/About/About.jsx';
  
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
           <Route path="*" element={<NotFound/>} />
           <Route path="/calendar" element={<Calendar/>} />
           <Route path="/announcements" element={<Announcements/>} />
+          <Route path="/about" element={<About/>} />
           {isAdmin && <Route path="/addEvent" element={<AddOrModifyEvent/>} />}
           {isAdmin && <Route path="/addAnnouncement" element={<CreateAnnouncement/>} />}
           

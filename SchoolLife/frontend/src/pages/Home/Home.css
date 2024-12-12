@@ -1,7 +1,39 @@
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Fundal general */
+.home-container {
+    background-color: #357b366d;
+    color: white;
     height: 100vh;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Conținutul paginii */
+.home-content {
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Titlu */
+.home-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Subtitlu */
+.home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Ilustrația */
+.home-illustration {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

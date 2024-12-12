@@ -28,8 +28,6 @@ const addEvent = async (req, res) => {
     const { name, timestamp, schedule, location } = req.body;
 
     try {
-        // could be expanded to allow more events at the same time,
-        // especially if they are part of different schedules
         const existingEvent = await Event.findOne({timestamp: timestamp});
 
         if (existingEvent) {
@@ -48,8 +46,6 @@ const modifyEvent = async (req, res) => {
     const { id, name, timestamp, location } = req.body;
 
     try {
-        // could be expanded to allow more events at the same time,
-        // especially if they are part of different schedules
         const event = await Event.findOne({id: id});
         if (!event) {
             return res.status(404).send({ message: 'The event with the respective id does not exist' });

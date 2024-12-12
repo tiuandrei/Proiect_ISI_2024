@@ -3,13 +3,17 @@ import './AddEvent.css';
 
 import Form from '../../components/Form/Form';
 import { addEvent, updateEvent } from '../../network/api'
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
+import { useState } from 'react';
 
-export const eventFormConfig = { Name: 'text', Day: 'date', Time: 'time', Location: 'text' }
+
+export const eventFormConfig = { Name: 'text', Day: 'date', Time: 'time', Location: 'custom' };
 
 export default function AddOrModifyEvent() {
     let { state } = useLocation();
+    const [modalOpen, setModalOpen] = useState(true);
+    const navigate = useNavigate(); 
     console.log(state);
     if(!state)
         state = {update: false, formInitialValues: {}};
@@ -46,16 +50,24 @@ export default function AddOrModifyEvent() {
         }
     }
 
+    if (!modalOpen) {
+        return null;
+    }
+
+
     return (
-        <div className="center">
-            {update === true ?
-                <Form
-                    config={eventFormConfig}
-                    initialValues={formInitialValues}
-                    formSubmitCallback={formSubmitCallback} /> :
-                <Form 
-                    config={eventFormConfig} 
-                    formSubmitCallback={formSubmitCallback} />}
+        <div className="modal-container">
+            <button className="close-button" onClick={() => navigate('/calendar')}>×</button>
+            <div className="center">
+                {update === true ?
+                    <Form
+                        config={eventFormConfig}
+                        initialValues={formInitialValues}
+                        formSubmitCallback={formSubmitCallback} /> :
+                    <Form 
+                        config={eventFormConfig} 
+                        formSubmitCallback={formSubmitCallback} />}
+            </div>
         </div>
     );
 }

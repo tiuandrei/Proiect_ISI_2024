@@ -21,24 +21,24 @@
 }
 
 .navbar li {
-    margin-right: 10px; /* Adjust the value as needed */
+    margin-right: 10px;
 }
 
 .navbar a {
     display: inline-block;
-    padding: 10px 20px; /* Adjust padding as needed */
-    background-color: #48ac6e; /* Button background color */
-    color: white; /* Text color */
-    text-decoration: none; /* Remove default underline */
-    border: 1px solid #1b6b43; /* Button border */
-    border-radius: 20px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    padding: 10px 20px;
+    background: linear-gradient(to right, #266850, #3c6720);
+    color: white;
+    text-decoration: none;
+    border: 1px solid #1c7649;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar a:hover {
-    background-color: #1b6b43; /* Hover background color */
-    border-color: #1b6b43; /* Hover border color */
-    color: white; /* Hover text color */
+    background-color: #1b6b43;
+    border-color: #1b6b43;
+    color: white;
 }
 
 

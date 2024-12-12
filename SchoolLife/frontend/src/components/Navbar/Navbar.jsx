@@ -11,10 +11,6 @@ const navLinksLeft = [
         path: '/about'
     },
     {
-        title: 'Contact',
-        path: '/contact'
-    },
-    {
         title: 'Announcements',
         path: '/announcements'
     }

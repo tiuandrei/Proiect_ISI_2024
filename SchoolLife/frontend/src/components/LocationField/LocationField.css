@@ -1,0 +1,131 @@
+.location-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.location-field button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.location-field p {
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    margin: auto;
+    z-index: 3;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+.restaurant-list {
+    flex: 2;
+    max-height: 33vh;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    border: 5px solid #bbf3dd;
+    border-radius: 8px;
+    background-color: #bbf3dd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restaurant-item {
+    padding: 10px 10px;
+    margin: 5px 0;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: white;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-item:hover {
+    background-color: #f0f0f0;
+}
+
+.div-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    width: 96%;
+    margin: 0 auto;
+}
+
+form {
+    flex: 1;
+    max-width: 40%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #bbf3dd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #2c7557c9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #2c7658;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    background-color: #1d513cfa;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.save-button {
+    margin-left: 10px;
+}
+
+.down-button {
+    margin-top: 10px;
+}

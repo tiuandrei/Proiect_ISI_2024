@@ -30,7 +30,7 @@ button[type="submit"] {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background: linear-gradient(to right, #2c926c, #deef89);
     color: white;
     border: none;
     border-radius: 5px;
