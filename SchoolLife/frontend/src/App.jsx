@@ -55,13 +55,13 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
           <Route path="/profile" element={<Profile/>} />
-          <Route path="/admin" element={<Admin/>} />
           <Route path="*" element={<NotFound/>} />
           <Route path="/calendar" element={<Calendar/>} />
           <Route path="/announcements" element={<Announcements/>} />
           <Route path="/about" element={<About/>} />
           {isAdmin && <Route path="/addEvent" element={<AddOrModifyEvent/>} />}
           {isAdmin && <Route path="/addAnnouncement" element={<CreateAnnouncement/>} />}
+          {isAdmin && <Route path="/admin" element={<Admin/>} />}
           
         </Routes>
       </BrowserRouter>

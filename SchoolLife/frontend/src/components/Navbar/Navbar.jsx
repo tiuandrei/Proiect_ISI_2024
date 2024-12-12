@@ -20,6 +20,10 @@ const navLinksLeftAdmin = [
     {
         title: 'Add Announcement',
         path: '/addAnnouncement'
+    },
+    {
+        title: 'Management',
+        path: '/admin'
     }
 ]
 const navLinksRightLoggedOut = [

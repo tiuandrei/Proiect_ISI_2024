@@ -6,13 +6,11 @@ const AnnouncementSchema =  new mongoose.Schema({
         required: true,
         trim: true,
     },
-
     timestamp: {
         type: Date,
         required: true,
         unique: true,
     },
-
     content: {
         type: String,
         required: true,
