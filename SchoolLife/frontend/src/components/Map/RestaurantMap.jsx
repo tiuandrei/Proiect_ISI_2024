@@ -2,6 +2,9 @@ import React, { useEffect, useRef } from "react";
 import Map from "@arcgis/core/Map";
 import MapView from "@arcgis/core/views/MapView";
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
+import Locate from "@arcgis/core/widgets/Locate";
+import Track from "@arcgis/core/widgets/Track";
+import Graphic from "@arcgis/core/Graphic";
 
 const RestaurantMap = ({ selectedId }) => {
     const mapDiv = useRef(null);
@@ -88,6 +91,35 @@ const RestaurantMap = ({ selectedId }) => {
 
             await view.when();
             setupLayer(map);
+
+            // Localizare
+            const locateWidget = new Locate({
+                view: view,
+                useHeadingEnabled: false,
+                goToOverride: (view, options) => {
+                    options.target.scale = 1500;
+                    return view.goTo(options.target);
+                },
+            });
+            view.ui.add(locateWidget, "top-left");
+
+            // Tracking
+            const trackWidget = new Track({
+                view: view,
+                graphic: new Graphic({
+                    symbol: {
+                        type: "simple-marker",
+                        size: "12px",
+                        color: "green",
+                        outline: {
+                            color: "#ffffff",
+                            width: 2,
+                        },
+                    },
+                }),
+                useHeadingEnabled: false,
+            });
+            view.ui.add(trackWidget, "top-left");
         }
 
         function setupLayer(map) {

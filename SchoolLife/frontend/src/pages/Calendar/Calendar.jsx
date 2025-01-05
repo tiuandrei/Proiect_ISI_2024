@@ -54,7 +54,7 @@ export default function Calendar() {
       <div>
         {isAdmin && (
           <a className="calendar-btn" href="/addEvent">
-            Adauga eveniment
+            Add event
           </a>
         )}
       </div>
