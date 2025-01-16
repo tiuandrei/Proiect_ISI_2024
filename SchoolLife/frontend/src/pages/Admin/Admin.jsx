@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getUsers, getProfile, updateUser } from '../../network/api';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import './Admin.css'; // Import your CSS file for styling
+import './Admin.css'; // Import fișierul CSS pentru stilizare
 
 export default function Admin() {
   const [users, setUsers] = useState([]);
@@ -42,13 +42,15 @@ export default function Admin() {
   };
 
   return (
-    <div className="admin-container">
+    <div className="admin-page">
+      <h1 className="admin-title">Panou Administrativ</h1>
+      <h2 className="admin-subtitle">Gestionează utilizatorii și alocă grupuri</h2>
       <Formik
         initialValues={{ userName: '', group: '' }}
         validate={(values) => {
           const errors = {};
           if (!values.userName) {
-            errors.userName = 'Required';
+            errors.userName = 'Numele utilizatorului este obligatoriu';
           }
           return errors;
         }}
@@ -58,11 +60,11 @@ export default function Admin() {
         }}
       >
         {({ isSubmitting }) => (
-          <Form>
+          <Form className="admin-form">
             <div className="form-group">
-              <label htmlFor="userName">Select User:</label>
+              <label htmlFor="userName">Selectează utilizatorul:</label>
               <Field as="select" name="userName" className="form-control">
-                <option value="">Select User</option>
+                <option value="">Selectează utilizatorul</option>
                 {users.map((user) => (
                   <option key={user.id} value={user.name}>
                     {user.name}
@@ -72,17 +74,17 @@ export default function Admin() {
               <ErrorMessage name="userName" component="div" className="error" />
             </div>
             <div className="form-group">
-              <label htmlFor="group">Group:</label>
+              <label htmlFor="group">Grup:</label>
               <Field
                 type="text"
                 name="group"
                 className="form-control"
-                placeholder="Enter Group"
+                placeholder="Introdu grupul"
               />
               <ErrorMessage name="group" component="div" className="error" />
             </div>
             <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-              Submit
+              Trimite
             </button>
           </Form>
         )}
@@ -90,4 +92,3 @@ export default function Admin() {
     </div>
   );
 }
-

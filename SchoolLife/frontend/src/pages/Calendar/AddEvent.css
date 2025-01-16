@@ -4,41 +4,121 @@
 html,
 body {
   margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4e6d7; /* Fundal uniform */
 }
 
-arcgis-map {
-  display: block;
-  height: 100vh;
+/* Secțiunea de sus */
+.page-header {
+  text-align: center;
+  padding: 30px 20px;
 }
 
+.page-title {
+  font-size: 2.5rem;
+  color: #8c6239; /* Maro */
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: #5e4429; /* Maro mai închis */
+  margin-bottom: 30px;
+}
+
+/* Modal */
 .modal-container {
   position: relative;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  background-color: #ffffff; /* Fundal alb pentru modal */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Umbră pentru adâncime */
   max-width: 600px;
-  margin: auto;
-  max-height: 900px;
+  margin: 0 auto;
+  max-height: 90vh;
+  overflow-y: auto; /* Permite scroll în cazul unui conținut mai mare */
 }
 
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  cursor: pointer;
-}
-
-.close-button:hover {
-  color: #ff0000;
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
 }
 
 .modal-container .center form {
   width: 100%;
-  max-width: none;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Stil pentru alinierea textului și a butonului "Select Location" */
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.form-group label {
+  width: 40%; /* Ajustează lățimea pentru alinierea cu butonul */
+  font-size: 1rem;
+  color: #5e4429;
+}
+
+button.select-location {
+  background-color: #754134; /* Fundal maro */
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.select-location:hover {
+  background-color: #5e4429; /* Maro mai închis */
+}
+
+/* Buton de Submit centrat */
+form button[type="submit"] {
+  background: #754134;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  height: 50px;
+  align-self: center; /* Centrează butonul */
+}
+
+form button[type="submit"]:hover {
+  background-color: #5e4429;
+}
+
+.form-field-location {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Spațiu între label și buton */
+}
+
+.form-field-location label {
+  margin: 0; /* Elimină margini implicite */
 }

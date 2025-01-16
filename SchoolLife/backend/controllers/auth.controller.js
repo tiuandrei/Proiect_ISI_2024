@@ -23,9 +23,12 @@ const login = async (req, res) => {
 }
 
 const register = async (req, res) => {
+  console.log("AAAAAAAAAAAAaa");
+
   const { name, email, password } = req.body;
   const isAdmin = false;
   const group = 'none';
+  console.log("AAAAAAAAAAAAaa");
   if (!name || !email || !password) {
     return res.status(400).json({ message: 'Please fill all fields' });
   }

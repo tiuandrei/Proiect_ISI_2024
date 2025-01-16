@@ -5,8 +5,8 @@
     height: 100vh;
     font-family: Arial, sans-serif;
     font-size: 24px;
-    color: #333;
-    background-color: #f5f5f5;
+    color: #222; /* Textul principal mai închis */
+    background-color: #f4e6d7; /* Fundal alb */
 }
 
 .not-found::before {
@@ -14,7 +14,7 @@
     font-size: 96px;
     font-weight: bold;
     margin-right: 20px;
-    color: #d9534f;
+    color: #8c6239;
 }
 
 @media (max-width: 768px) {

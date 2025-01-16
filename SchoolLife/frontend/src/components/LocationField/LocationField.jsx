@@ -34,7 +34,7 @@ export default function LocationField({ value, onChange }) {
             <button type="button" onClick={() => setModalIsOpen(true)}>
                 Select Location
             </button>
-            {value && <p>Selected Location: {value}</p>}
+            {value && <p style={{ fontSize: '18px', fontWeight: 'bold', color: '#5c4033' }}>Selected Location: {value}</p>}
 
             <Modal
                 isOpen={modalIsOpen}

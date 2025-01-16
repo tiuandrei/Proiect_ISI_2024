@@ -29,11 +29,10 @@ export default function Calendar() {
             title: e.name,
             start: e.timestamp,
             id: e._id,
-            location: e.location
+            location: e.location,
           };
         })
       );
-
     } catch (error) {
       console.error(error);
     }
@@ -49,86 +48,85 @@ export default function Calendar() {
   }, []);
 
   return (
-    <div>
-      <h1>Calendar</h1>
-      <div>
-        {isAdmin && (
+    <div className="calendar-page">
+      {/* Secțiunea de sus */}
+      {isAdmin && (
+        <div className="calendar-header">
+          <h1 className="calendar-title">Planifică Evenimentele Tale</h1>
+          <p className="calendar-subtitle">
+            Creează evenimente noi și vizualizează activitățile planificate.
+          </p>
           <a className="calendar-btn" href="/addEvent">
-            Add event
+            Adaugă Eveniment
           </a>
-        )}
+        </div>
+      )}
+
+      {/* Container pentru calendar */}
+      <div className="calendar-container">
+        <FullCalendar
+          datesSet={(event) => {
+            const midDate = new Date(
+              (event.start.getTime() + event.end.getTime()) / 2
+            );
+            const startOfMonth = new Date(
+              midDate.getFullYear(),
+              midDate.getMonth(),
+              1
+            );
+            const endOfMonth = new Date(
+              midDate.getFullYear(),
+              midDate.getMonth() + 1,
+              0
+            );
+            fetchEvents(startOfMonth, endOfMonth);
+          }}
+          plugins={[dayGridPlugin]}
+          initialView="dayGridMonth"
+          weekends={true}
+          events={events}
+          eventContent={(eventContent) => {
+            return <EventComponent eventInfo={eventContent} />;
+          }}
+        />
       </div>
-      <FullCalendar
-        datesSet={(event) => {
-          var midDate = new Date(
-            (event.start.getTime() + event.end.getTime()) / 2
-          );
-          const startOfMonth = new Date(
-            midDate.getFullYear(),
-            midDate.getMonth(),
-            1
-          );
-          const endOfMonth = new Date(
-            midDate.getFullYear(),
-            midDate.getMonth() + 1,
-            0
-          );
-          fetchEvents(startOfMonth, endOfMonth);
-        }}
-        plugins={[dayGridPlugin]}
-        initialView="dayGridMonth"
-        weekends={true}
-        events={events}
-        eventContent={(eventContent) => {
-          return (< EventComponent eventInfo={eventContent} isAdmin={isAdmin} />)
-        }}
-      />
     </div>
   );
 }
 
-function EventComponent({ eventInfo, isAdmin }) {
+function EventComponent({ eventInfo }) {
   const navigate = useNavigate();
 
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
-
-  const offset = eventInfo.event.start.getTimezoneOffset()
-  const newDate = new Date(eventInfo.event.start.getTime() - (offset * 60 * 1000))
+  const offset = eventInfo.event.start.getTimezoneOffset();
+  const newDate = new Date(
+    eventInfo.event.start.getTime() - offset * 60 * 1000
+  );
 
   const formInitialValues = {
     Name: eventInfo.event.title,
-    Day: newDate.toISOString().split('T')[0],
+    Day: newDate.toISOString().split("T")[0],
     Time: eventInfo.event.start.toLocaleTimeString(undefined, {
       hour: "numeric",
       minute: "numeric",
     }),
-    Location: eventInfo.event.extendedProps.location
+    Location: eventInfo.event.extendedProps.location,
   };
 
   return (
-    <>
-      <span
-        onClick={() => {
-          navigate("/addEvent", { state: { formInitialValues: formInitialValues, update: true } })
-        }}
-      >
-        <b>
-          {eventInfo.event.start.toLocaleTimeString(undefined, {
-            hour: "numeric",
-            minute: "numeric",
-          })}
-        </b>{" "}
-        <i>{eventInfo.event.title}</i>
-      </span>
-    </>
+    <span
+      onClick={() => {
+        navigate("/addEvent", {
+          state: { formInitialValues: formInitialValues, update: true },
+        });
+      }}
+    >
+      <b>
+        {eventInfo.event.start.toLocaleTimeString(undefined, {
+          hour: "numeric",
+          minute: "numeric",
+        })}
+      </b>{" "}
+      <i>{eventInfo.event.title}</i>
+    </span>
   );
 }

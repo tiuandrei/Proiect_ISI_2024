@@ -2,42 +2,69 @@ form {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    background-color: #ffffff; /* Fundal alb pentru contrast */
+    border: 1px solid #eed8c9; /* Culoare caldă pentru bordură */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Umbră subtilă */
+    font-family: 'Arial', sans-serif;
 }
 
 form div {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
+    font-size: 1rem;
+    color: #8c6239; /* Culoare maro cald pentru text */
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
     box-sizing: border-box;
+    font-size: 1rem;
+    color: #34495e;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #8c6239; /* Evidențiere maro cald */
+    box-shadow: 0 0 8px rgba(140, 98, 57, 0.4); /* Umbră maro subtilă */
+    outline: none;
 }
 
 button[type="submit"] {
     display: block;
     width: 100%;
-    padding: 10px;
-    background: linear-gradient(to right, #2c926c, #deef89);
-    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    color: #ffffff;
+    background: linear-gradient(135deg, #8c6239, #704a2e); /* Gradient maro */
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #5a361c; /* Culoare mai închisă la hover */
+    transform: scale(1.02); /* Ușoară creștere pentru interactivitate */
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98); /* Feedback vizual la click */
+}
+
+.error-message {
+    color: #e74c3c; /* Roșu pentru mesaje de eroare */
+    font-size: 0.9rem;
+    margin-top: 5px;
 }

@@ -1,39 +1,73 @@
 /* Fundal general */
 .home-container {
-    background-color: #357b366d;
-    color: white;
+    background: #f9f9f9; /* Fundal neutru */
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 10%;
+}
+
+/* Structură generală */
+.home-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Trei coloane egale */
+    gap: 20px; /* Spațiu între coloane */
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Coloană text */
+.home-text {
+    grid-column: 2 / 3; /* Textul ocupă coloana din mijloc */
     text-align: center;
 }
 
-/* Conținutul paginii */
-.home-content {
-    max-width: 800px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Titlu */
-.home-content h1 {
+.home-text h1 {
     font-size: 2.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
 }
 
-/* Subtitlu */
-.home-content p {
+.home-text p {
     font-size: 1.2rem;
     margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
 }
 
-/* Ilustrația */
-.home-illustration {
+.cta-button {
+    background-color: #a97160;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background: #8d5543;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Coloane imagine */
+.home-illustration-left,
+.home-illustration-right {
     max-width: 100%;
+    text-align: center;
+}
+
+.home-illustration-left img,
+.home-illustration-right img {
+    width: 100%; /* Imaginile ocupă întreaga lățime a coloanelor */
+    max-width: 600px; /* Am mărit limita maximă la 600px */
     height: auto;
-    margin-top: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Umbră pentru imagini */
 }

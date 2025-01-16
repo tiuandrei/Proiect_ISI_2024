@@ -5,7 +5,7 @@
 }
 
 .location-field button {
-    background-color: #007bff;
+    background-color: #8b4513; /* Maro-rosiatic */
     color: white;
     border: none;
     padding: 8px 12px;
@@ -19,15 +19,17 @@
 .location-field p {
     margin-top: 8px;
     font-style: italic;
+    color: #5c4033; /* Gri-maro */
 }
 
 .modal {
-    background: white;
+    background: #f5f5dc; /* Bej deschis */
     padding: 20px;
     border-radius: 8px;
     width: 50%;
     margin: auto;
     z-index: 3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .overlay {
@@ -39,7 +41,6 @@
     bottom: 0;
 }
 
-
 .restaurant-list {
     flex: 2;
     max-height: 33vh;
@@ -47,9 +48,9 @@
     padding: 0;
     margin: 0;
     list-style-type: none;
-    border: 5px solid #bbf3dd;
+    border: 2px solid #d2b48c; /* Bej deschis */
     border-radius: 8px;
-    background-color: #bbf3dd;
+    background-color: #f5deb3; /* Bej */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -59,11 +60,11 @@
 .restaurant-item {
     padding: 10px 10px;
     margin: 5px 0;
-    border: 1px solid #eee;
+    border: 1px solid #cd853f; /* Maro-deschis */
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    background-color: white;
+    background-color: #fffaf0; /* Bej foarte deschis */
     width: 90%;
     max-width: 700px;
     text-align: center;
@@ -71,7 +72,7 @@
 }
 
 .restaurant-item:hover {
-    background-color: #f0f0f0;
+    background-color: #f4a460; /* Maro deschis spre portocaliu */
 }
 
 .div-container {
@@ -83,18 +84,19 @@
     margin: 0 auto;
 }
 
-form {
-    flex: 1;
-    max-width: 40%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #bbf3dd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+    form {
+        flex: 1;
+        max-width: 40%;
+        padding: 10px;
+        border: 1px solid #d2b48c; /* Bej deschis */
+        border-radius: 8px;
+        background-color: #f5deb3; /* Fundal bej */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        height: fit-content;
+    }
 
 button {
-    background-color: #2c7557c9;
+    background-color: #8b4513; /* Maro-rosiatic */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -107,12 +109,12 @@ button {
 }
 
 button:hover {
-    background-color: #2c7658;
+    background-color: #a0522d; /* Maro cald */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 button:active {
-    background-color: #1d513cfa;
+    background-color: #6b3b23; /* Maro închis */
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -128,4 +130,8 @@ button:disabled {
 
 .down-button {
     margin-top: 10px;
+}
+
+form {
+    background-color: #f5deb3 !important;
 }

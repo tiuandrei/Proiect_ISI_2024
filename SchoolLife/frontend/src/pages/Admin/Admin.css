@@ -1,6 +1,10 @@
-.admin-container {
-  max-width: 400px;
-  margin: 0 auto;
+.admin-form {
+  max-width: 600px; /* Lățimea formularului */
+  margin: 50px auto; /* Centrare verticală și orizontală */
+  padding: 30px; /* Spațiu interior */
+  background-color: #f4e6d7; /* Fundal gri deschis */
+  border-radius: 10px; /* Colțuri rotunjite */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adaugă umbră */
 }
 
 .form-group {
@@ -10,34 +14,38 @@
 label {
   display: block;
   margin-bottom: 5px;
+  font-size: 18px; /* Dimensiune font etichete */
+  color: #8c6239; /* Maro */
 }
 
 .error {
-  color: red;
+  color: #e74c3c; /* Roșu pentru erori */
   font-size: 14px;
   margin-top: 5px;
 }
 
 .btn {
   cursor: pointer;
-  background-color: #007bff;
+  background-color: #8c6239; /* Maro */
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 12px 25px;
+  font-size: 16px; /* Font mai mare */
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #8c6239; /* Maro */
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #5e4429; /* Maro mai închis */
 }
 
 .form-control {
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   font-size: 16px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -45,6 +53,22 @@ label {
 
 .form-control:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #8c6239; /* Maro */
+  box-shadow: 0 0 4px rgba(140, 98, 57, 0.5); /* Glow maro */
+}
+.admin-page {
+  text-align: center;
+  padding: 20px;
 }
 
+.admin-title {
+  font-size: 2.5rem;
+  color: #8c6239; /* Maro */
+  margin-bottom: 10px;
+}
+
+.admin-subtitle {
+  font-size: 1.5rem;
+  color: #3f2c18; /* Gri închis */
+  margin-bottom: 30px;
+}

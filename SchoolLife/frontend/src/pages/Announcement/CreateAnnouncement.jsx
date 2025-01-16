@@ -13,30 +13,30 @@ const CreateAnnouncement = () => {
     },
     validationSchema: Yup.object({
       title: Yup.string()
-        .max(100, 'Must be 100 characters or less')
-        .required('Required'),
+        .max(100, 'Titlul trebuie să aibă cel mult 100 de caractere')
+        .required('Titlul este obligatoriu'),
       content: Yup.string()
-        .max(1000, 'Must be 1000 characters or less')
-        .required('Required'),
+        .max(1000, 'Conținutul trebuie să aibă cel mult 1000 de caractere')
+        .required('Conținutul este obligatoriu'),
     }),
     onSubmit: async (values, { setSubmitting, resetForm }) => {
       try {
         await addAnnouncement(values.title, values.content);
         resetForm();
         Swal.fire({
-            title: 'Announcement created successfully!',
-            icon: 'success',
-            showConfirmButton: false,
-            timer: 1500
-        })
+          title: 'Anunțul a fost creat cu succes!',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500,
+        });
       } catch (error) {
         console.error(error);
         Swal.fire({
-            title: 'Failed to create announcement.',
-            icon: 'error',
-            showConfirmButton: false,
-            timer: 1500
-        })
+          title: 'Eroare la crearea anunțului.',
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 1500,
+        });
       } finally {
         setSubmitting(false);
       }
@@ -45,10 +45,17 @@ const CreateAnnouncement = () => {
 
   return (
     <div className="create-announcement">
-      <h1 className="create-announcement__title">Create Announcement</h1>
+      <h1 className="create-announcement__title">Creare Anunț</h1>
+      <h2 className="create-announcement__subtitle">
+        Împărtășește actualizări importante cu toți
+      </h2>
+      <p className="create-announcement__text">
+        Folosește acest formular pentru a crea un nou anunț. Adaugă un titlu clar și un conținut detaliat 
+        pentru a te asigura că mesajul ajunge la toți cei vizați.
+      </p>
       <form onSubmit={formik.handleSubmit} className="create-announcement__form">
         <div className="create-announcement__form-group">
-          <label htmlFor="title" className="create-announcement__label">Title</label>
+          <label htmlFor="title" className="create-announcement__label">Titlu</label>
           <input
             id="title"
             name="title"
@@ -63,7 +70,7 @@ const CreateAnnouncement = () => {
           ) : null}
         </div>
         <div className="create-announcement__form-group">
-          <label htmlFor="content" className="create-announcement__label">Content</label>
+          <label htmlFor="content" className="create-announcement__label">Conținut</label>
           <textarea
             id="content"
             name="content"
@@ -77,7 +84,7 @@ const CreateAnnouncement = () => {
           ) : null}
         </div>
         <button type="submit" disabled={formik.isSubmitting} className="create-announcement__button">
-          {formik.isSubmitting ? 'Submitting...' : 'Submit'}
+          {formik.isSubmitting ? 'Se trimite...' : 'Trimite'}
         </button>
       </form>
     </div>

@@ -1,16 +1,91 @@
+.calendar-page {
+    margin: 0;
+    padding: 20px;
+    background-color: #f4e6d7; /* Fundal uniform */
+    font-family: Arial, sans-serif; /* Font consistent */
+  }
+  
+  /* Secțiunea de sus */
+  .calendar-header {
+    text-align: center; /* Centrează titlul și butonul */
+    margin-bottom: 30px; /* Spațiu între secțiuni */
+  }
+  
+  .calendar-title {
+    color: #8c6239; /* Maro */
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  .calendar-subtitle {
+    color: #5e4429; /* Maro mai închis */
+    font-size: 1.2rem;
+    margin: 10px 0 20px; /* Spațiere între subtitlu și buton */
+  }
+
 .calendar-btn {
     display: inline-block;
-    padding: 10px 20px; /* Adjust padding as needed */
-    background-color: #48ac6e; /* Button background color */
-    color: white; /* Text color */
-    text-decoration: none; /* Remove default underline */
-    border: 1px solid #1b6b43; /* Button border */
-    border-radius: 20px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    padding: 12px 25px;
+    margin: 0 5px;
+    background: #754134;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .calendar-btn:hover {
-    background-color: #1b6b43; /* Hover background color */
-    border-color: #1b6b43; /* Hover border color */
-    color: white; /* Hover text color */
+    background: #63372c;
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    color: #e0dcd5;
+}
+
+.calendar-container {
+    max-width: 900px; /* Dimensiunea maximă */
+    margin: 0 auto; /* Centrează containerul */
+    padding: 20px;
+    background-color: #ffffff; /* Fundal alb pentru calendar */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adaugă umbră */
+  }  
+
+.fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.fc-button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.fc .fc-button {
+    background-color: #8c6239;
+    border: 1px solid #5e4429;
+    border-radius: 10px;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.fc .fc-button:hover {
+    background-color: #5e4429;
+    color: #f4e6d7;
+}
+
+.fc .fc-button:disabled {
+    background-color: #c6b07d;
+    color: #ffffff;
+    cursor: not-allowed;
+    opacity: 0.7;
+    border: none;
+}
+.fc-day-today {
+    background-color: #c6b07d;
 }
